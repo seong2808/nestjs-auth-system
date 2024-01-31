@@ -76,4 +76,11 @@ export class UsersController {
     const data = await this.usersService.findAllUser();
     return data;
   }
+
+  // 회원 권한 변경
+  @Patch('role')
+  @UseGuards(JwtAuthGuard)
+  async role(@CurrentUser() CurrentUser: UserDTO) {
+    return await this.usersService.changeRole(CurrentUser);
+  }
 }

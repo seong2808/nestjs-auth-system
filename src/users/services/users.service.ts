@@ -83,4 +83,23 @@ export class UsersService {
   async findAllUser() {
     return await this.usersRepository.find();
   }
+
+  async changeRole(currentUser: UserDTO) {
+    const { email } = currentUser;
+    const user = await this.usersRepository.findOneBy({ email });
+    if (!user) {
+      throw new UnauthorizedException('해당하는 이메일은 존재하지 않습니다.');
+    }
+    if (user.isAdmin) {
+      await this.usersRepository.update(
+        { id: currentUser.id },
+        { isAdmin: false },
+      );
+    } else {
+      await this.usersRepository.update(
+        { id: currentUser.id },
+        { isAdmin: true },
+      );
+    }
+  }
 }
