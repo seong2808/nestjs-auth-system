@@ -4,7 +4,7 @@ import { CommonEntity } from 'src/common/entities/common.entity';
 import { Column, Entity } from 'typeorm';
 
 @Entity({ name: 'User' })
-export class User extends CommonEntity {
+export class UserEntity extends CommonEntity {
   @IsEmail({}, { message: '이메일 형식이 아닙니다.' })
   @IsNotEmpty({ message: '이메일을 작성해주세요.' })
   @Column({ type: 'varchar', unique: true, nullable: false })
