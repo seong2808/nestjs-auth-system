@@ -1,20 +1,14 @@
 # NestJS-Auth-System
 
----
-
 **NestJS를 활용한 사용자 인증과 권한 관리 시스템 구현**
 
 ## 설치
-
----
 
 ```bash
 $  npm  install
 ```
 
 ## 실행
-
----
 
 ```bash
 # watch mode
@@ -25,8 +19,6 @@ $  npm  run  start:prod
 ```
 
 ## .env
-
----
 
 ```.env
 #app
@@ -49,8 +41,6 @@ MYSQL_TZ=
 ```
 
 ## 주요 기능
-
----
 
 **1. 회원가입 API**
 Body를 통해 email, password, username를 받아 회원가입을 합니다.
@@ -82,8 +72,6 @@ DB에서 직접 수정하는 수고를 덜고자 만들었습니다.
 만약, production 시, api 삭제 또는 수정이 필요합니다.
 
 ## API 명세서
-
----
 
 PostMan를 사용한 API 명세서
 [API 명세서](https://documenter.getpostman.com/view/28119606/2s9Yytffgg#e4ef4cae-afa4-49da-b2a7-773ce5fb24ed)
